@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mock Job Application Form</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="container">
+    <h2>Mock Job Application</h2>
+    <p class="container-subtitle1">Please complete the form below to submit your application.</p>
+    <p class="container-subtitle2">Fields marked with an asterisk (<span class="asterisk">*</span>) are required.</p>
+
+    <!-- Page Progress Bar -->
+    <div class="progress-bar">
+      <div class="page-indicator active">1</div>
+      <div class="page-indicator">2</div>
+    </div>
+
+    <form id="applicationForm" action="https://formsubmit.co/ajax/youremailhere@mock.com" method="POST" enctype="multipart/form-data">
+      <!-- Set subject line for email notifications -->
+      <input type="hidden" name="_subject" value="New Job Application Submission">
+      <!-- Disable default reCAPTCHA redirect page if you want standard JSON responses -->
+      <input type="hidden" name="_captcha" value="false">
+
+      <!-- Page 1 -->
+      <div class="form-page active">
+
+        <!-- Title -->
+        <div class="form-group">
+          <label>Title</label>
+          <div class="pill-group">
+            <label class="pill-option">
+              <input type="radio" name="Title" value="Doctor">
+              <span>Doctor</span>
+            </label>
+            <label class="pill-option">
+              <input type="radio" name="Title" value="Miss">
+              <span>Miss</span>
+            </label>
+            <label class="pill-option">
+              <input type="radio" name="Title" value="Mr.">
+              <span>Mr.</span>
+            </label>
+            <label class="pill-option">
+              <input type="radio" name="Title" value="Mrs.">
+              <span>Mrs.</span>
+            </label>
+            <label class="pill-option">
+              <input type="radio" name="Title" value="Ms.">
+              <span>Ms.</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Full Name -->
+        <div class="form-group">
+          <label for="fullName">Full Name <span class="asterisk">*</span></label>
+          <input type="text" id="fullName" name="Full Name" required>
+        </div>
+
+        <!-- Email -->
+        <div class="form-group">
+          <label for="email">Email Address <span class="asterisk">*</span></label>
+          <input type="email" id="email" name="Email Address" required>
+        </div>
+
+        <!-- Phone Number -->
+        <div class="form-group extra-space">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="Phone Number">
+        </div>
+
+        <!-- Address -->
+        <div class="form-group extra-space">
+          <label for="address"><span class="bold big">Address</span></label>
+          <label for="address">Please enter your home address.</label>
+        </div>
+
+        <!-- Country -->
+        <div class="form-group autocomplete-container">
+          <label for="countryInput">Country <span class="asterisk">*</span></label>
+          <input type="text" id="countryInput" name="Country" autocomplete="off" required>
+          <div id="countrySuggestions" class="suggestions-dropdown"></div>
+        </div>
+
+        <!-- Full Address -->
+        <div class="form-group">
+          <label for="address">Street Address, City, State, Postal Code <span class="asterisk">*</span></label>
+          <input type="text" id="address" name="Full Address" required>
+        </div>
+        
+        <div class="btn-group">
+          <button type="button" class="btn btn-next">Next page &rarr;</button>
+        </div>
+      </div>
+
+      <!-- Page 2 -->
+      <div class="form-page">
+        
+        <!-- Questions -->
+        <div class="form-group extra-space">
+          <label for="application questions"><span class="bold big">Application Questions</span></label>
+          <label for="application questions">Please complete the below questions. If you previously applied to one of our positions, some of your answers may pre-populate. Make sure you review all your answers for accuracy and update them as needed before continuing to the next page.</label>
+        </div>
+
+        <!-- Age -->
+        <div class="form-group">
+          <label>Are you at least 18 years old? <span class="asterisk">*</span></label>
+          <div class="pill-group">
+            <label class="pill-option">
+              <input type="radio" name="Age" value="&gt;=18" required>
+              <span>Yes</span>
+            </label>
+            <label class="pill-option">
+              <input type="radio" name="Age" value="&lt;18">
+              <span>No</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Work Authorization -->
+        <div class="form-group">
+          <label>For the position you are applying to, are you legally authorized to work in this country? Note: If hired, based upon the work location, you may be required to provide government issued documentation proving your work authorization, on or before your first day of employment. <span class="asterisk">*</span></label>
+          <div class="pill-group">
+            <label class="pill-option">
+              <input type="radio" name="Work Auhorization" value="Yes" required>
+              <span>Yes</span>
+            </label>
+            <label class="pill-option">
+              <input type="radio" name="Work Auhorization" value="No">
+              <span>No</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Sponsorship -->
+        <div class="form-group">
+          <label>Will you now or in the future require sponsorship for an employment-based visa status? <span class="asterisk">*</span></label>
+          <div class="pill-group">
+            <label class="pill-option">
+              <input type="radio" name="Sponsorship required" value="Yes" required>
+              <span>Yes</span>
+            </label>
+            <label class="pill-option">
+              <input type="radio" name="Sponsorship required" value="No">
+              <span>No</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Status -->
+        <div class="form-group">
+          <label>Please select the response that best describes your current working rights' status in this country, which position that you are applying to. <span class="asterisk">*</span></label>
+          <div class="pill-group">
+            <label class="pill-option">
+              <input type="radio" name="Status" value="Citizen" required>
+              <span>Citizen</span>
+            </label>
+            <label class="pill-option">
+              <input type="radio" name="Status" value="Permanent Resident">
+              <span>Permanent Resident</span>
+            </label>
+            <label class="pill-option">
+              <input type="radio" name="Status" value="Foreigner">
+              <span>Foreigner</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="btn-group">
+          <button type="button" class="btn btn-prev">&larr; Back</button>
+          <button type="button" class="btn btn-next">Next page &rarr;</button>
+        </div>
+      </div>
+
+      <!-- Page 3 -->
+      <div class="form-page">
+        
+        <!-- Education -->
+        <div class="form-group extra-space">
+          <label for="education"><span class="bold big">Education</span></label>
+          <label for="education">Enter details about your most recent/highest level relevant education</label>
+        </div>
+
+        <!-- Degree -->
+        <div class="form-group">
+          <label for="degree">Degree <span class="asterisk">*</span></label>
+          <select id="degree" name="Degree" required>
+            <option value="" disabled selected></option>
+            <option value="phd">Ph.D. / Doctorate</option>
+            <option value="masters">Master's Degree</option>
+            <option value="bachelors">Bachelor's Degree</option>
+            <option value="associate">Associate's Degree</option>
+            <option value="engineer">Engineer's Degree</option>
+            <option value="juris-doctor">Juris Doctor (J.D.)</option>
+            <option value="specialist">Specialist Degree (Example: Ed.S. or Sp.Ed., Psy.S)</option>
+            <option value="technical">Technical Diploma</option>
+            <option value="vocational">Vocational School</option>
+            <option value="educational">Educational Program</option>
+            <option value="high-school">High School Diploma</option>
+          </select>
+        </div>
+
+        <!-- School -->
+        <div class="form-group">
+          <label for="school">School</label>
+          <input type="text" id="school" name="School">
+        </div>
+
+        <!-- Graduation Date -->
+        <div class="form-group autocomplete-container">
+          <label>Graduation Date</label>
+          <div style="display: flex; gap: 10px;">
+            <select name="Graduation Month" style="flex: 3;">
+              <option value="" disabled selected>Month</option>
+              <option value="January">January</option>
+              <option value="February">February</option>
+              <option value="March">March</option>
+              <option value="April">April</option>
+              <option value="May">May</option>
+              <option value="June">June</option>
+              <option value="July">July</option>
+              <option value="August">August</option>
+              <option value="September">September</option>
+              <option value="October">October</option>
+              <option value="November">November</option>
+              <option value="December">December</option>
+            </select>
+            <select name="Graduation Year" id="graduationYear" style="flex: 1;">
+              <option value="" disabled selected>Year</option>
+            </select>
+          </div>
+        </div>
+        
+        <!-- Country -->
+        <div class="form-group autocomplete-container">
+          <label for="schoolCountryInput">Country</label>
+          <input type="text" id="schoolCountryInput" name="School" autocomplete="off">
+          <div id="schoolCountrySuggestions" class="suggestions-dropdown"></div>
+        </div>
+
+        <!-- Area of Study -->
+        <div class="form-group">
+          <label for="areaOfStudy">Area of Study</label>
+          <input type="text" id="areaOfStudy" name="Area of Study">
+        </div>
+        
+        <!-- Experience -->
+        <div class="form-group extra-space">
+          <label for="education"><span class="bold big">Experience</span></label>
+          <label for="education">Enter details about your work experience</label>
+        </div>
+
+        <!-- Experience 1-->
+        <div class="pill-group">
+          <label class="pill-option">
+            <input type="radio" name="addExperience1" id="addExperience1">
+            <span>Add Experience 1</span>
+          </label>
+        </div>
+
+        <div class="form-experience" id="experience1">
+          
+          <div class="form-group">
+            <label for="employerName">Employer Name <span class="asterisk">*</span></label>
+            <input type="text" id="employerName1" name="Employer Name 1">
+          </div>
+          
+          <div class="form-group">
+            <label for="jobTitle">Job Title</label>
+            <input type="text" id="jobTitle1" name="Job Title 1">
+          </div>
+
+          <div class="form-group autocomplete-container">
+            <label>Start Date</label>
+            <div style="display: flex; gap: 10px;">
+              <select name="Start Month 1" style="flex: 3;">
+                <option value="" disabled selected>Month</option>
+                <option value="January">January</option>
+                <option value="February">February</option>
+                <option value="March">March</option>
+                <option value="April">April</option>
+                <option value="May">May</option>
+                <option value="June">June</option>
+                <option value="July">July</option>
+                <option value="August">August</option>
+                <option value="September">September</option>
+                <option value="October">October</option>
+                <option value="November">November</option>
+                <option value="December">December</option>
+              </select>
+              <select name="Start Year 1" id="startYear1" style="flex: 1;">
+                <option value="" disabled selected>Year</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group autocomplete-container">
+            <label>End Date (leave empty if this is your current job)</label>
+            <div style="display: flex; gap: 10px;">
+              <select name="End Month 1" style="flex: 3;">
+                <option value="" disabled selected>Month</option>
+                <option value="January">January</option>
+                <option value="February">February</option>
+                <option value="March">March</option>
+                <option value="April">April</option>
+                <option value="May">May</option>
+                <option value="June">June</option>
+                <option value="July">July</option>
+                <option value="August">August</option>
+                <option value="September">September</option>
+                <option value="October">October</option>
+                <option value="November">November</option>
+                <option value="December">December</option>
+              </select>
+              <select name="End Year 1" id="endYear1" style="flex: 1;">
+                <option value="" disabled selected>Year</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group autocomplete-container">
+            <label for="employerCountry1">Employer Country</label>
+            <input type="text" id="employerCountry1" name="Employer Country 1" autocomplete="off">
+            <div id="employerCountrySuggestions1" class="suggestions-dropdown"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="employerCity1">Employer City</label>
+            <input type="text" id="employerCity1" name="Employer City 1">
+          </div>
+
+          <div class="form-group">
+            <label>Internal</label>
+            <div class="pill-group">
+              <label class="pill-option">
+                <input type="radio" name="Internal1" value="Yes">
+                <span>Yes</span>
+              </label>
+              <label class="pill-option">
+                <input type="radio" name="Internal1" value="No">
+                <span>No</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="pill-group extra-space">
+            <label class="pill-option">
+              <input type="radio" name="removeExperience1" id="removeExperience1">
+              <span>Remove Experience 1</span>
+            </label>
+          </div>
+
+        </div>
+
+        <!-- Experience 2-->
+        <div class="pill-group">
+          <label class="pill-option">
+            <input type="radio" name="addExperience2" id="addExperience2">
+            <span>Add Experience 2</span>
+          </label>
+        </div>
+
+        <div class="form-experience" id="experience2">
+          
+          <div class="form-group">
+            <label for="employerName">Employer Name <span class="asterisk">*</span></label>
+            <input type="text" id="employerName2" name="Employer Name 2">
+          </div>
+          
+          <div class="form-group">
+            <label for="jobTitle">Job Title</label>
+            <input type="text" id="jobTitle2" name="Job Title 2">
+          </div>
+
+          <div class="form-group autocomplete-container">
+            <label>Start Date</label>
+            <div style="display: flex; gap: 10px;">
+              <select name="Start Month 2" style="flex: 3;">
+                <option value="" disabled selected>Month</option>
+                <option value="January">January</option>
+                <option value="February">February</option>
+                <option value="March">March</option>
+                <option value="April">April</option>
+                <option value="May">May</option>
+                <option value="June">June</option>
+                <option value="July">July</option>
+                <option value="August">August</option>
+                <option value="September">September</option>
+                <option value="October">October</option>
+                <option value="November">November</option>
+                <option value="December">December</option>
+              </select>
+              <select name="Start Year 2" id="startYear2" style="flex: 1;">
+                <option value="" disabled selected>Year</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group autocomplete-container">
+            <label>End Date (leave empty if this is your current job)</label>
+            <div style="display: flex; gap: 10px;">
+              <select name="End Month 2" style="flex: 3;">
+                <option value="" disabled selected>Month</option>
+                <option value="January">January</option>
+                <option value="February">February</option>
+                <option value="March">March</option>
+                <option value="April">April</option>
+                <option value="May">May</option>
+                <option value="June">June</option>
+                <option value="July">July</option>
+                <option value="August">August</option>
+                <option value="September">September</option>
+                <option value="October">October</option>
+                <option value="November">November</option>
+                <option value="December">December</option>
+              </select>
+              <select name="End Year 2" id="endYear2" style="flex: 1;">
+                <option value="" disabled selected>Year</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group autocomplete-container">
+            <label for="employerCountry2">Employer Country</label>
+            <input type="text" id="employerCountry2" name="Employer Country 2" autocomplete="off">
+            <div id="employerCountrySuggestions2" class="suggestions-dropdown"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="employerCity2">Employer City</label>
+            <input type="text" id="employerCity2" name="Employer City 2">
+          </div>
+
+          <div class="form-group">
+            <label>Internal</label>
+            <div class="pill-group">
+              <label class="pill-option">
+                <input type="radio" name="Internal2" value="Yes">
+                <span>Yes</span>
+              </label>
+              <label class="pill-option">
+                <input type="radio" name="Internal2" value="No">
+                <span>No</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="pill-group extra-space">
+            <label class="pill-option">
+              <input type="radio" name="removeExperience2" id="removeExperience2">
+              <span>Remove Experience 2</span>
+            </label>
+          </div>
+
+        </div>
+
+        <div class="btn-group">
+          <button type="button" class="btn btn-prev">&larr; Back</button>
+          <button type="button" class="btn btn-next">Next page &rarr;</button>
+        </div>
+      </div>
+
+      <!-- Page 4 -->
+      <div class="form-page">
+        
+        <!-- Resume File Upload -->
+        <div class="form-group">
+          <label for="resume">Upload Resume (PDF, DOC, DOCX) <span class="asterisk">*</span></label>
+          <input type="file" id="resume" name="Resume" accept=".pdf,.doc,.docx" required>
+        </div>
+
+        <!-- Cover Letter / Bio -->
+        <div class="form-group extra-space">
+          <label for="cv">Upload Cover Letter (PDF, DOC, DOCX)</label>
+          <input type="file" id="cv" name="Cover Letter" accept=".pdf,.doc,.docx">
+        </div>
+
+        <!-- E-Signature -->
+        <div class="form-group extra-space">
+          <label for="esignaturetext"><span class="bold big">E-Signature</span></label>
+          <label for="esignaturetext">I hereby certify that all statements in this application form are true and correct to the best of my knowledge. Bla bla bla more legal jargon.</label>
+          <label for="esignaturetext">Please enter your first and last name below.</label>
+        </div>
+        <div class="form-group">
+          <label for="esignature">Full Name <span class="asterisk">*</span></label>
+          <input type="text" id="esignature" name="E-Signature Full Name" required>
+        </div>
+
+        <div class="btn-group">
+          <button type="button" class="btn btn-prev">&larr; Back</button>
+          <button type="submit" id="submitBtn" class="btn btn-submit">Submit Application</button>
+        </div>
+      </div>
+
+      <div id="formStatus" class="status-message"></div>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
